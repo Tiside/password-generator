@@ -5,7 +5,7 @@ $letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 $numbers = "0123456789";
 
-$special = "!@#$%^&*()-_=+[]{};:,.<>/?|/";
+$special = "!@#$%^&*()-_=+[]{};:,.<>/?|/'\"`";
 
 $all = [];
 
@@ -15,8 +15,9 @@ $passwordStrenght = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lenght = (int)$_POST["lenght"];
-    $includeNumbers = isset($_POST["numbers"]);
-    $includeSpecial = isset($_POST["special"]);
+    $includeNumbers = !empty($_POST["numbers"]);
+    $includeSpecial = !empty($_POST["special"]);
+
 
     for ($i = 0; $i < $lenght; $i++) {
         $randomLetter = rand(0, strlen($letters) - 1);

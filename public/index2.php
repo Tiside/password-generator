@@ -173,6 +173,7 @@ $tries = $_SESSION["tries"];
 $shouldDisabled = $tries >= 3;
 
 // 5. HTML форма
+
 ?>
 
 <form action="" method="post">
